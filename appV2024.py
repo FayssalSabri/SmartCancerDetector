@@ -12,8 +12,9 @@ def add_predictions(input_data):
     model = pickle.load(open("model/model.pkl", "rb"))
     scaler = pickle.load(open("model/scaler.pkl", "rb"))
 
-    input_array = np.array(list(input_data.values())).reshape(1, -1)
+    input_array = pd.DataFrame([list(input_data.values())], columns=[list(input_data.keys())])
     scaled_input_array = scaler.transform(input_array)
+
 
     prediction = model.predict(scaled_input_array)
     
@@ -179,20 +180,46 @@ def display_cancer_data(cancer_type):
     # Button to go back to the home page
     if st.button('Retour'):
         st.session_state.selected_cancer = None
-
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
 # Function to visualize model performance
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, roc_curve, auc
+
+# Supposons que get_clean_data() soit déjà définie
+
 def model_visualization():
     st.title("Visualisation des performances du modèle")
-    model = pickle.load(open("model/model.pkl", "rb"))
-    data = get_clean_data()
     
-    X = data.drop(columns=["diagnosis"])
-    y = data["diagnosis"]
+    # Charger les données nettoyées
+    df = get_clean_data()
 
-    # Confusion Matrix
-    y_pred = model.predict(X)
-    cm = confusion_matrix(y, y_pred)
+    # Séparation des données en features et target
+    X = df.drop('diagnosis', axis=1)  # Les features
+    y = df['diagnosis']  # La target (diagnostic)
 
+    # Séparation des données en ensembles d'entraînement et de test
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Entraîner un modèle de régression logistique
+    model = LogisticRegression(max_iter=10000)
+    model.fit(X_train, y_train)
+
+    # Prédictions sur l'ensemble de test
+    y_pred = model.predict(X_test)
+    
+    # Calcul de la matrice de confusion
+    cm = confusion_matrix(y_test, y_pred)
+
+    # Visualisation de la matrice de confusion
     fig, ax = plt.subplots(figsize=(8, 6))
     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=ax)
     ax.set_xlabel('Prédictions')
@@ -200,11 +227,14 @@ def model_visualization():
     ax.set_title('Matrice de Confusion')
     st.pyplot(fig)
 
-    # ROC Curve
-    y_score = model.predict_proba(X)[:, 1]
-    fpr, tpr, _ = roc_curve(y, y_score)
+    # Prédictions probabilistes pour la courbe ROC
+    y_score = model.predict_proba(X_test)[:, 1]
+
+    # Calcul de la courbe ROC
+    fpr, tpr, _ = roc_curve(y_test, y_score)
     roc_auc = auc(fpr, tpr)
 
+    # Visualisation de la courbe ROC
     fig, ax = plt.subplots(figsize=(8, 6))
     ax.plot(fpr, tpr, color='darkorange', lw=2, label='AUC = %0.2f' % roc_auc)
     ax.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
@@ -213,6 +243,7 @@ def model_visualization():
     ax.set_title('Courbe ROC')
     ax.legend(loc='lower right')
     st.pyplot(fig)
+
 
 # Main function to handle navigation and display pages
 def main():
