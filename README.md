@@ -9,6 +9,8 @@
 - **Sélection de type de cancer** : Choisissez parmi cancer du sein, cancer de la peau, ou cancer du poumon.
 - **Prédiction** : Entrez les caractéristiques cellulaires via des curseurs pour obtenir des prédictions sur la nature bénigne ou maligne des cellules.
 ![Graphique radar des résultats](images/Prédictions.png) 
+![Graphique radar des résultats](images/Prédictions_2.png) 
+
 - **Visualisation** : Affichez les résultats sous forme de graphique radar, et visualisez les performances du modèle à travers des courbes ROC et des matrices de confusion.
 
 ![matrice de confusion](images/Visualisation.png) 
