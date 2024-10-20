@@ -8,9 +8,13 @@
 ## Fonctionnalités
 - **Sélection de type de cancer** : Choisissez parmi cancer du sein, cancer de la peau, ou cancer du poumon.
 - **Prédiction** : Entrez les caractéristiques cellulaires via des curseurs pour obtenir des prédictions sur la nature bénigne ou maligne des cellules.
+![Graphique radar des résultats](images/Prédictions.png) 
 - **Visualisation** : Affichez les résultats sous forme de graphique radar, et visualisez les performances du modèle à travers des courbes ROC et des matrices de confusion.
 
-![Graphique radar des résultats](images/Prédictions.png) <!-- Image d'un graphique radar -->
+![matrice de confusion](images/Visualisation.png) 
+![courbe ROC](images/Visualisation_2.png) 
+
+
 
 ## Technologies Utilisées
 - **Langages** : Python
