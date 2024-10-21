@@ -54,10 +54,3 @@ CancerPredictor is powered by well-validated machine learning models trained on 
 ## Contributing
 If you'd like to contribute to the project, feel free to fork the repository and submit a pull request. Any contributions such as adding new features, improving performance, or fixing bugs are welcome!
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## Contact
-For any inquiries or questions, feel free to reach out to me:
-- **Email**: fayssalsabri4@gmail.com
-- **GitHub**: [FayssalSabri](https://github.com/FayssalSabri)
