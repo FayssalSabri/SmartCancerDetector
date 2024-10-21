@@ -1,27 +1,25 @@
+
 # CancerPredictor
 
-## Description
-**CancerPredictor** est une application web interactive développée avec **Streamlit**, conçue pour prédire le type de cancer (cancer du sein, cancer de la peau, cancer du poumon) à partir de caractéristiques cellulaires. L'application exploite des modèles de machine learning pour fournir des prédictions précises basées sur les données saisies par l'utilisateur.
+## Overview
+**CancerPredictor** is an interactive web application developed with **Streamlit** to predict the type of cancer (breast cancer, skin cancer, or lung cancer) based on cellular characteristics. The app utilizes machine learning models to deliver accurate predictions based on user input data.
 
-![Capture d'écran de l'application](images/Home_page_1.png) 
+![Application Screenshot](images/Home_page_1.png)
 
-## Fonctionnalités
-- **Sélection de type de cancer** : Choisissez parmi cancer du sein, cancer de la peau, ou cancer du poumon.
-- **Prédiction** : Entrez les caractéristiques cellulaires via des curseurs pour obtenir des prédictions sur la nature bénigne ou maligne des cellules.
-![Graphique radar des résultats](images/Prédictions.png) 
-![Graphique radar des résultats](images/Prédictions_2.png) 
+## Features
+- **Cancer Type Selection**: Choose between breast cancer, skin cancer, or lung cancer for prediction.
+- **Prediction**: Input cellular characteristics using sliders to obtain a prediction on whether the cells are benign or malignant.
+  ![Radar Chart of Predictions](images/Prédictions.png)
+  ![Radar Chart of Predictions](images/Prédictions_2.png)
+  
+- **Visualization**: View results using radar charts, and evaluate model performance with ROC curves and confusion matrices.
+  ![Confusion Matrix](images/Visualisation.png)
+  ![ROC Curve](images/Visualisation_2.png)
 
-- **Visualisation** : Affichez les résultats sous forme de graphique radar, et visualisez les performances du modèle à travers des courbes ROC et des matrices de confusion.
-
-![matrice de confusion](images/Visualisation.png) 
-![courbe ROC](images/Visualisation_2.png) 
-
-
-
-## Technologies Utilisées
-- **Langages** : Python
-- **Frameworks** : Streamlit
-- **Bibliothèques** : 
+## Technologies Used
+- **Programming Language**: Python
+- **Framework**: Streamlit
+- **Libraries**:
   - Scikit-learn
   - Plotly
   - Pandas
@@ -30,7 +28,36 @@
   - Seaborn
 
 ## Installation
-1. Clonez le dépôt :
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/FayssalSabri/SmartCancerDetector.git
    cd SmartCancerDetector
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run the application:
+   ```bash
+   streamlit run app.py
+   ```
+
+## How It Works
+The application allows users to input features corresponding to three different types of cancers: breast, skin, and lung cancer. Based on the input, the machine learning model provides a prediction regarding the nature of the cancer (benign or malignant). Visualizations such as radar charts, ROC curves, and confusion matrices provide insights into model performance and prediction results.
+
+## Models and Evaluation
+CancerPredictor is powered by well-validated machine learning models trained on relevant datasets. The models have been evaluated using standard metrics like accuracy, precision, recall, and ROC-AUC to ensure reliable predictions. The confusion matrix and ROC curve visualizations allow users to assess the model's classification performance for each cancer type.
+
+## Contributing
+If you'd like to contribute to the project, feel free to fork the repository and submit a pull request. Any contributions such as adding new features, improving performance, or fixing bugs are welcome!
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+For any inquiries or questions, feel free to reach out to me:
+- **Email**: fayssalsabri4@gmail.com
+- **GitHub**: [FayssalSabri](https://github.com/FayssalSabri)
