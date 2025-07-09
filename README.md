@@ -1,4 +1,4 @@
-# CANCERPREDICTOR
+# SmartCancerDetector
 
 *Accurate Cancer Type Predictions with Interactive Visual Insights*
 
