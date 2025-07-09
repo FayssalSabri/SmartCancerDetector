@@ -1,24 +1,59 @@
+# CANCERPREDICTOR
 
-# CancerPredictor
+*Accurate Cancer Type Predictions with Interactive Visual Insights*
+
+![Last Commit](https://img.shields.io/badge/last%20commit-today-blue)
+![Python](https://img.shields.io/badge/python-100%25-blue)
+![Languages](https://img.shields.io/badge/languages-1-gray)
+
+*Built with the tools and technologies:*
+
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Framework-Streamlit-red?logo=streamlit)
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [How It Works](#how-it-works)
+- [Models and Evaluation](#models-and-evaluation)
+- [Contributing](#contributing)
+
+---
 
 ## Overview
-**CancerPredictor** is an interactive web application developed with **Streamlit** to predict the type of cancer (breast cancer, skin cancer, or lung cancer) based on cellular characteristics. The app utilizes machine learning models to deliver accurate predictions based on user input data.
+
+**CancerPredictor** is an interactive web application developed with **Streamlit** to predict the type of cancer (breast cancer, skin cancer, or lung cancer) based on cellular characteristics.  
+It uses machine learning models to deliver accurate predictions based on user input data.
 
 ![Application Screenshot](images/Home_page_1.png)
 
+---
+
 ## Features
-- **Cancer Type Selection**: Choose between breast cancer, skin cancer, or lung cancer for prediction.
-- **Prediction**: Input cellular characteristics using sliders to obtain a prediction on whether the cells are benign or malignant.
-  ![Radar Chart of Predictions](images/Prédictions.png)
-  ![Radar Chart of Predictions](images/Prédictions_2.png)
-  
-- **Visualization**: View results using radar charts, and evaluate model performance with ROC curves and confusion matrices.
-  ![Confusion Matrix](images/Visualisation.png)
+
+- **Cancer Type Selection**: Choose between breast, skin, or lung cancer for prediction.  
+- **Prediction Interface**: Use sliders to enter cellular characteristics and obtain predictions (benign or malignant).  
+  ![Radar Chart of Predictions](images/Prédictions.png)  
+  ![Radar Chart of Predictions](images/Prédictions_2.png)  
+
+- **Visualization Tools**:  
+  - Radar charts  
+  - ROC curves  
+  - Confusion matrices  
+  ![Confusion Matrix](images/Visualisation.png)  
   ![ROC Curve](images/Visualisation_2.png)
 
+---
+
 ## Technologies Used
-- **Programming Language**: Python
-- **Framework**: Streamlit
+
+- **Programming Language**: Python  
+- **Framework**: Streamlit  
 - **Libraries**:
   - Scikit-learn
   - Plotly
@@ -27,30 +62,44 @@
   - Matplotlib
   - Seaborn
 
+---
+
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/FayssalSabri/SmartCancerDetector.git
-   cd SmartCancerDetector
-   ```
+```bash
+git clone https://github.com/FayssalSabri/SmartCancerDetector.git
+cd SmartCancerDetector
+pip install -r requirements.txt
+```
 
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+To launch the app:
 
-3. Run the application:
-   ```bash
-   streamlit run app.py
-   ```
+```bash
+streamlit run app.py
+```
+
+---
 
 ## How It Works
-The application allows users to input features corresponding to three different types of cancers: breast, skin, and lung cancer. Based on the input, the machine learning model provides a prediction regarding the nature of the cancer (benign or malignant). Visualizations such as radar charts, ROC curves, and confusion matrices provide insights into model performance and prediction results.
+
+Users select the cancer type and input features. The ML model then predicts if the cancer is benign or malignant.  
+Visual outputs like radar charts, ROC curves, and confusion matrices help interpret model behavior.
+
+---
 
 ## Models and Evaluation
-CancerPredictor is powered by well-validated machine learning models trained on relevant datasets. The models have been evaluated using standard metrics like accuracy, precision, recall, and ROC-AUC to ensure reliable predictions. The confusion matrix and ROC curve visualizations allow users to assess the model's classification performance for each cancer type.
+
+CancerPredictor uses validated ML models trained on specialized datasets.  
+Metrics used:
+- Accuracy
+- Precision
+- Recall
+- ROC-AUC
+
+Visual tools help users evaluate classification quality for each cancer type.
+
+---
 
 ## Contributing
-If you'd like to contribute to the project, feel free to fork the repository and submit a pull request. Any contributions such as adding new features, improving performance, or fixing bugs are welcome!
 
+Feel free to fork the repo and submit a pull request to add features, fix bugs, or enhance performance.
